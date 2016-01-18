@@ -1,0 +1,29 @@
+= RESTful Notes API Guide
+Vladimir Tsukanov;
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+
+[[overview]]
+= Overview
+
+[[get-user-example]]
+
+==== Example request
+
+include::{snippets}/get-user-example/curl-request.adoc[]
+
+==== Request structure
+
+include::{snippets}/get-user-example/http-request.adoc[]
+
+==== Example response
+
+include::{snippets}/get-user-example/http-response.adoc[]
+
+==== Response structure
+
+include::{snippets}/get-user-example/response-fields.adoc[]
