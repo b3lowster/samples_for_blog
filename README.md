@@ -13,3 +13,7 @@ http://localhost:8080/persons/{id}
 Create person [PUT]:
 Content-Type : application/json
 {  "firstName" : "Frodo",  "lastName" : "Baggins" }
+
+# spring rest docs
+
+http://localhost:8080/docs/api-guide.html
