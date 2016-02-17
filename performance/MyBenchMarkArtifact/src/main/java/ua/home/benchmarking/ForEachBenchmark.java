@@ -44,7 +44,7 @@ import java.util.concurrent.TimeUnit;
 
 @State(Scope.Thread)
 @BenchmarkMode(Mode.All)
-@OutputTimeUnit(TimeUnit.MILLISECONDS)
+@OutputTimeUnit(TimeUnit.SECONDS)
 @Warmup(iterations = 10)
 @Measurement(iterations = 7)
 public class ForEachBenchmark {
@@ -53,12 +53,15 @@ public class ForEachBenchmark {
 
     private static final List<Integer> listForOld = new ArrayList<>();
 
+    private static final List<Integer> listForLoop = new ArrayList<>();
+
     static {
         Random r = new Random();
         for (int i=0; i < 1000000; i ++) {
             Integer f = r.nextInt();
             listForOld.add(f);
             listForNew.add(f);
+            listForLoop.add(f);
         }
     }
 
@@ -75,6 +78,14 @@ public class ForEachBenchmark {
     public void oldForEach() {
         for (Integer i : listForOld) {
             ++i;
+        }
+    }
+
+    @Benchmark
+    public void commonLoop() {
+        for (int i=0;i<listForLoop.size();i++) {
+            Integer f = listForLoop.get(i);
+            ++f;
         }
     }
 
