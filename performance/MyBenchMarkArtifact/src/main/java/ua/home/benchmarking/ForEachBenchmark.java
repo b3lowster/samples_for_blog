@@ -29,9 +29,9 @@
  * THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package my.benchmark.group;
+package ua.home.benchmarking;
 
-import org.openjdk.jmh.annotations.Benchmark;
+import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
@@ -40,8 +40,14 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
-public class MyBenchmark {
+@State(Scope.Thread)
+@BenchmarkMode(Mode.All)
+@OutputTimeUnit(TimeUnit.MILLISECONDS)
+@Warmup(iterations = 10)
+@Measurement(iterations = 7)
+public class ForEachBenchmark {
 
     private static final List<Integer> listForNew = new ArrayList<>();
 
@@ -58,7 +64,7 @@ public class MyBenchmark {
 
     public static void main(String[] args) throws RunnerException {
         Options opt = new OptionsBuilder()
-                .include(MyBenchmark.class.getSimpleName())
+                .include(ForEachBenchmark.class.getSimpleName())
                 .forks(1)
                 .build();
 
