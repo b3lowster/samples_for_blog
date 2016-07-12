@@ -21,15 +21,25 @@ http://localhost:8080/docs/api-guide.html
 # spring data rest with evens
 
 curl -i -X POST -d '{"id":"26","name":"name","type":"type"}' -H 'Content-Type: application/json' http://localhost:8080/assets
+
 POST = create
+
 @HandleBeforeCreate
+
 @HandleAfterCreate
+
 onBeforeCreate
+
 onAfterCreate
 
 curl -i -X PUT -d '{"id":"26","name":"name-1","type":"type"}' -H 'Content-Type: application/json' http://localhost:8080/assets/26
+
 PUT = update
+
 @HandleBeforeSave
+
 @HandleAfterSave
+
 onBeforeSave
+
 onAfterSave
