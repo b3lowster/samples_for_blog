@@ -1,0 +1,33 @@
+{
+  "address": {
+    "country":"USA",
+    "zip":"10002",
+    "street":"29th",
+    "building":"19090",
+    "apartment":"9a"
+  },
+  "role": {
+    "roleName" : "admin",
+    "permissions": {
+      "home":"READ",
+      "contacts":"WRITE"
+    }
+  },
+  "accounts":[
+    {
+      "number":"260089",
+      "rest":99.99,
+      "main":true
+    },
+    {
+      "number":"261091",
+      "rest":9.19,
+      "main":false
+    },
+    {
+      "number":"2620901",
+      "rest":55.77,
+      "main":false
+    }
+  ]
+}
